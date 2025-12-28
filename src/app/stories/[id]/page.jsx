@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StoryDetails = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;
   const devStories = [
     {
       "id": 1,
@@ -60,7 +60,10 @@ const StoryDetails = async ({ params }) => {
     }
   ];
 
-  const story = devStories.find((story) => story.id == id);
+  const story = devStories.find(
+    (story) => story.id === Number(id)
+  );
+
   if (!story) {
     return <div>Story not found</div>;
   }
@@ -112,3 +115,5 @@ const StoryDetails = async ({ params }) => {
 };
 
 export default StoryDetails;
+
+
