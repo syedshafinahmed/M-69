@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StoryDetails = async ({ params }) => {
-  const { id } = await params;
+  const { id } = params;
   const devStories = [
     {
       "id": 1,
